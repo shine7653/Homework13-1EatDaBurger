@@ -5,10 +5,16 @@ var Sequelize = require('sequelize');
 var sequelize = require("../config/connection");
 
 //Create a 'Burgers' model that matches up with DB
-var Burgers = sequelize.define("burgers", {
-    burger_name: Sequelize.STRING,
-    devoured: Sequelize.BOOLEAN,
-    createdAt: Sequelize.DATE
+var Burgers = sequelize.define("burger", {
+    burger_name: {
+        type: Sequelize.STRING
+    },
+    devoured: {
+        type: Sequelize.BOOLEAN
+    },
+    createdAt: {
+        type: Sequelize.DATE
+    }
 });
 
 // syncs with DB
