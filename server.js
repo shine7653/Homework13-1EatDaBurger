@@ -20,12 +20,12 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Static directory to be served
-app.use(express.static(path.join(__dirname, 'public')));
-
+// app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static("public"));
 
 //Routes
 app.use('/', require("./routes/api-routes"));
-
+// require("./routes/api-routes.js")(app);
 
 app.listen(PORT, function() {
     console.log(`App listening on PORT" ${PORT}`);
