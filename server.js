@@ -8,8 +8,8 @@ const path = require('path');
 const con = require('./config/connection');
 
 // Sets up the Express App
-var app = express();
-var PORT = process.env.PORT || 8080;
+const app = express();
+const PORT = process.env.PORT || 8080;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -20,14 +20,14 @@ app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
 
 // Static directory to be served
-app.use(express.static(path.join(__dirname, 'public'));
-
+app.use(express.static(path.join(__dirname, 'public')));
 
 
 //Routes
-require("./app/routes/api-routes.js")(app);
+app.use('/', require("./routes/api-routes"));
+
 
 app.listen(PORT, function() {
-    console.log("App listening on PORT" + PORT);
-})
+    console.log(`App listening on PORT" ${PORT}`);
+});
 
