@@ -18,7 +18,7 @@ var Burgers = sequelize.define("burger", {
 });
 
 // syncs with DB
-Burgers.sync({force: true});
+Burgers.sync({force: false});
 
 module.exports = Burgers;
 
