@@ -17,7 +17,7 @@ module.exports = {
   },
   "production": {
     "use_env_variable": "JAWSDB_URL",
-    "username": "root",
+    // "username": "root",
     "password": null,
     "database": "database_production",
     "host": "127.0.0.1",
